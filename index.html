@@ -24,7 +24,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 38px;color:var(--muted);f
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#" aria-label="BrightTools home"><span class="logo">✦</span>BrightTools</a>
-<nav class="navlinks"><a href="#tools">All tools</a><a href="#about">About</a></nav>
+<nav class="navlinks"><a href="#tools">All tools</a><a href="about.html">About</a></nav>
 <a class="navpill" href="#tools">Free tools, always</a>
 </div></header>
 <main>
@@ -44,10 +44,17 @@ footer{border-top:1px solid var(--line);padding:28px 0 38px;color:var(--muted);f
 <button class="toolcard" data-tool="password"><div class="toolicon i-pink">⚿</div><h3>Password Generator</h3><p>Create strong random passwords with options you control.</p><div class="cardfoot"><span>Open tool ↗</span><span class="tag">SECURITY</span></div></button>
 <button class="toolcard" data-tool="qr"><div class="toolicon i-yellow">▦</div><h3>QR Code Generator</h3><p>Turn a link or short message into a downloadable QR code.</p><div class="cardfoot"><span>Open tool ↗</span><span class="tag">GENERATORS</span></div></button>
 </div>
-<div class="trust" id="about"><span>✓ <b>Free to use</b></span><span>↗ <b>No account needed</b></span><span>◈ <b>Browser-based tools</b></span><span>⌁ <b>Works on mobile</b></span></div>
+<section class="trust" aria-label="BrightTools features"><span>✓ <b>Free to use</b></span><span>↗ <b>No account needed</b></span><span>◈ <b>Browser-based tools</b></span><span>⌁ <b>Works on mobile</b></span></section>
+<section class="wrap" style="max-width:850px;margin:0 auto 64px" aria-labelledby="guideTitle">
+  <div class="sectionhead"><div><h2 id="guideTitle">Everyday tasks, made simpler</h2><p>Quick guides to help you get a better result from each tool.</p></div></div>
+  <article style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:14px"><h3>How to reduce an image file size</h3><p style="color:var(--muted)">Choose an image, select a quality setting, and compare the resulting file size with the original. JPEG and WebP are useful for photographs; PNG is often better for graphics that need transparency. Check the downloaded image before using it, because lower file sizes can mean lower visual quality.</p></article>
+  <article style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:14px"><h3>How to resize an image without stretching it</h3><p style="color:var(--muted)">Keep the aspect-ratio option enabled when changing width or height. This preserves the image's proportions. For a profile picture or banner, check the target website's recommended dimensions before resizing.</p></article>
+  <article style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:14px"><h3>What a word count includes</h3><p style="color:var(--muted)">Word counters typically treat groups of characters separated by whitespace as words. Different writing apps can count punctuation, hyphenated terms, and languages differently, so use the result as a helpful estimate rather than an official submission count.</p></article>
+  <article style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px"><h3>Use passwords and QR codes carefully</h3><p style="color:var(--muted)">Use a unique password for every account and store it in a reputable password manager. Before sharing a QR code, scan it yourself and verify the destination. Never put confidential information into a QR code intended for public distribution.</p></article>
+</section>
 </section>
 </main>
-<footer><div class="wrap foot"><div>© <span id="year"></span> BrightTools. Built to make everyday tasks easier.</div><div class="footlinks"><a href="#" data-page="privacy">Privacy</a><a href="#" data-page="about">About</a><a href="mailto:hello@example.com">Contact</a></div></div></footer>
+<footer><div class="wrap foot"><div>© <span id="year"></span> BrightTools. Built to make everyday tasks easier.</div><div class="footlinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div></footer>
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modalhead"><h2 id="modalTitle">Tool</h2><button class="close" id="close" aria-label="Close tool">×</button></div><div class="modalbody" id="modalBody"></div></div></div>
 <div class="toast" id="toast" role="status"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -81,7 +88,7 @@ function initImageTool(name){let image=null,originalFile=null;const fileInput=$(
 function formatBytes(n){if(n<1024)return n+" B";if(n<1048576)return (n/1024).toFixed(1)+" KB";return (n/1048576).toFixed(2)+" MB"}
 function downloadUrl(url,name){const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove()}
 $("#search").addEventListener("input",()=>{const q=$("#search").value.toLowerCase().trim();let visible=0;$$("[data-tool]").forEach(c=>{const yes=c.innerText.toLowerCase().includes(q);c.style.display=yes?"":"none";if(yes)visible++});$("#count").textContent=`${visible} tool${visible===1?"":"s"}`});
-$$("[data-page]").forEach(a=>a.onclick=e=>{e.preventDefault();const p=a.dataset.page;if(p==="privacy")alert("BrightTools browser-based tools process your input locally where possible. This initial version does not have analytics or advertising code installed. Before public launch, publish a complete privacy policy that accurately describes any hosting logs, cookies, analytics, and advertising services you add.");else alert("BrightTools is a collection of simple free online utilities. Contact: replace hello@example.com with your real contact address before publishing.")});
+
 </script>
 </body>
 </html>
