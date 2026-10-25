@@ -21,3 +21,11 @@ Upload all five HTML pages and this README to the root of the hosting repository
 
 ## Privacy notes
 Most tool processing happens in the browser. The QR tool loads a third-party library, and the static host may process technical logs. This version does not intentionally include analytics or advertising scripts.
+
+
+## SEO files
+- `robots.txt` allows crawlers and points to the sitemap.
+- `sitemap.xml` lists the current public pages.
+- HTML pages include canonical URLs and basic Open Graph/Twitter metadata.
+
+After uploading, verify these URLs load: `/robots.txt` and `/sitemap.xml`. Then add the site in Google Search Console and submit `sitemap.xml`. Search indexing is not guaranteed or immediate.

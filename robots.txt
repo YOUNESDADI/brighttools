@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://younesdadi.github.io/brighttools/sitemap.xml
